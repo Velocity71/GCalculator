@@ -15,8 +15,12 @@ class Graph extends Frame {
     // variables FIX ME PLEASE
     private static int xSize = 500;
     private static int ySize = 500;
+
     private static int xStep = 10;
     private static int yStep = 10;
+
+    private static double xScale = 10;
+    private static double yScale = 10;
 
     public Graph() {
         super("Graphing Calculator");
@@ -46,21 +50,22 @@ class Graph extends Frame {
 
         // draw the function in red
         g.setColor(Color.red);
-        drawFunc(g2d);
+        drawFunc(g2d, g);
     }
 
     private static double f(double x) {
-        return Math.pow(x, 2);
+        return Math.sin(x);
     }
 
     // draw function f(x)
-    private static void drawFunc(Graphics2D g2d) {
+    private static void drawFunc(Graphics2D g2d, Graphics g) {
         double lastX = (xSize/2) * -1;
         double lastY = f(lastX);
 
-        for (double x = (xSize/2) * -1 + 1; x < xSize/2; x++) {
-            Shape l = new Line2D.Double(transformX(lastX), transformY(lastY), transformX(x), transformY(f(x)));
-            g2d.draw(l);
+        for (double x = (xSize/2) * -1 + (1/xScale); x < xSize/2; x+= (1/xScale)) {
+            Shape a = new Line2D.Double(transformX(lastX*xScale), transformY(lastY*yScale), transformX(x*xScale), transformY(f(x)*yScale));
+            g2d.draw(a);
+
             lastX = x;
             lastY = f(x);
         }
