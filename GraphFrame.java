@@ -23,7 +23,7 @@ class GraphFrame extends Frame {
     private static double yScale = 10;
 
     public GraphFrame() {
-        super("Graphing");
+        super("Graph");
         setSize(xSize, ySize);
         setUndecorated(true);
         setVisible(true);
