@@ -10,7 +10,7 @@ import java.awt.geom.Line2D;
 import java.lang.Math;
 
 
-class Graph extends Frame {
+class GraphFrame extends Frame {
 
     // variables FIX ME PLEASE
     private static int xSize = 500;
@@ -22,8 +22,8 @@ class Graph extends Frame {
     private static double xScale = 10;
     private static double yScale = 10;
 
-    public Graph() {
-        super("Graphing Calculator");
+    public GraphFrame() {
+        super("Graphing");
         setSize(xSize, ySize);
         setUndecorated(true);
         setVisible(true);
