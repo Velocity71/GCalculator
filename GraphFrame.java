@@ -10,7 +10,7 @@ import java.awt.geom.Line2D;
 import java.lang.Math;
 
 
-class GraphFrame extends Frame {
+class GraphFrame extends DraggableFrame {
 
     // variables FIX ME PLEASE
     private static int xSize = 500;
